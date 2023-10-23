@@ -1,0 +1,144 @@
+.header {
+    margin-top: 25px;
+}
+
+.header__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__item {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.nav__list {
+    display: flex;
+    gap: 24px;
+}
+
+.nav__list > .header__info {
+    display: none;
+}
+
+
+.nav__link {
+    color: #111827;
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    
+    &:hover {
+        opacity: 0.7;
+    }
+}
+
+a {
+    display: inline-block;
+}
+
+.header__info {
+    display: flex;
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    background: #fff;
+    display: none;
+}
+
+.btn__menu {
+    display: none;
+}
+
+.btn__exit {
+    display: none;
+}
+
+
+@media only screen and (max-width: 750px) {
+    .nav__list {
+        display: none;
+    }
+
+    .btn {
+        display: block;
+    }
+
+    .btn__menu {
+        display: block;
+    }
+
+    .header__item--info {
+        display: flex;
+        gap: 20px;
+    }
+
+    .btn__exit--menu {
+        display: block;
+    }
+
+    .btn__menu--exit {
+        display: none;
+    }
+
+    .nav__blok {
+        display: block;
+        position: absolute;
+        z-index: 10;
+        background-color: darkblue;
+        border-radius: 10px;
+        width: 50%;
+        height: 50%;
+        top: 80px;
+        right: 20px;
+        text-align: center;
+        animation: navblok 0.8s ease;
+        gap: 20px;
+
+        @keyframes navblok {
+       
+            from {
+                transform: translateX(70%);
+                opacity: 0;
+            }
+    
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        & > li > a {
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            margin-left: -30px;
+            padding: 20px 0;
+            transition: all 0.2s ease;
+
+            &:hover {
+                color: #000;
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 505px) {
+    .header__info {
+        display: none;
+    }
+
+    .nav__blok > .header__info {
+        display: block;
+        flex-direction: column;
+        max-width: 200px;
+        text-align: center;
+        margin-left: 30px;
+    }
+}
